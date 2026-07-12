@@ -1862,6 +1862,86 @@
 			"avisIA": "",
 			"avisPresse": "Quasi aucun essai presse ; positionnement premier prix, réseau et SAV à vérifier avant achat.",
 			"equipements": []
+		},
+		{
+			"id": "cyclone-ra-125-plus",
+			"marque": "Cyclone",
+			"modele": "RA 125 Plus",
+			"categorie": "Custom",
+			"origine": "Chine",
+			"prix": 3295,
+			"puissance": 15,
+			"poids": null,
+			"selle": null,
+			"freinage": "ABS",
+			"photo": "",
+			"site": "https://www.cyclonemotor.fr/",
+			"notes": "Cruiser rétro : monocylindre 15 ch refroidi liquide, jantes alu tubeless, ABS + TCS. 3 395 € en bicolore. Garantie 3 ans.",
+			"sceauParrain": false,
+			"avisParrain": "",
+			"sceauIA": false,
+			"avisIA": "",
+			"avisPresse": "Custom rétro bien équipé pour le prix (ABS + antipatinage, tubeless, full LED) et garanti 3 ans. Nouveauté 2026, pas encore de recul ; mêmes réserves d'image de marque que le reste de la gamme.",
+			"equipements": [
+				"Contrôle de traction",
+				"Full LED"
+			]
+		},
+		{
+			"id": "cyclone-rx2-125",
+			"marque": "Cyclone",
+			"modele": "RX2 125",
+			"categorie": "Trail",
+			"origine": "Chine",
+			"prix": 3495,
+			"puissance": 15,
+			"poids": 162,
+			"selle": 820,
+			"freinage": "ABS",
+			"photo": "",
+			"site": "https://www.cyclonemotor.fr/",
+			"notes": "Trail adventure : DACT 4 soupapes avec arbre d'équilibrage, 6 rapports, TFT 5\" avec mirroring, protections de cadre, garde-boue haut + bas fournis. Garantie 3 ans. Cousin technique de la Macbor Montana (base Zongshen).",
+			"sceauParrain": false,
+			"avisParrain": "",
+			"sceauIA": false,
+			"avisIA": "",
+			"avisPresse": "Nouveauté printemps 2026 : équipement salué (TFT mirroring, béquille centrale, protections, deux garde-boue fournis) et garantie 3 ans. Principale critique des essayeurs et des forums : 162 kg, très lourd pour 15 ch. Marque sans image en France malgré le sérieux industriel de Zonsen ; distribution DIP (Orcal, Voge) en construction.",
+			"equipements": [
+				"Béquille centrale",
+				"TFT couleur",
+				"Connectivité smartphone",
+				"Full LED",
+				"Sabot moteur"
+			]
+		},
+		{
+			"id": "cyclone-rx2-125-pack",
+			"marque": "Cyclone",
+			"modele": "RX2 125 Pack Valises",
+			"categorie": "Trail",
+			"origine": "Chine",
+			"prix": 3795,
+			"puissance": 15,
+			"poids": 162,
+			"selle": 820,
+			"freinage": "ABS",
+			"photo": "",
+			"site": "https://www.cyclonemotor.fr/",
+			"notes": "Version d'usine avec valises et top case, pour 300 € de plus que la RX2 standard. Trail adventure : DACT 4 soupapes, 6 rapports, TFT 5\" mirroring, garantie 3 ans.",
+			"sceauParrain": false,
+			"avisParrain": "",
+			"sceauIA": false,
+			"avisIA": "",
+			"avisPresse": "Nouveauté printemps 2026 : équipement salué (TFT mirroring, béquille centrale, protections, deux garde-boue fournis) et garantie 3 ans. Principale critique des essayeurs et des forums : 162 kg, très lourd pour 15 ch. Marque sans image en France malgré le sérieux industriel de Zonsen ; distribution DIP (Orcal, Voge) en construction.",
+			"equipements": [
+				"Valises de série",
+				"Top case de série",
+				"Béquille centrale",
+				"TFT couleur",
+				"Connectivité smartphone",
+				"Full LED",
+				"Sabot moteur"
+			]
 		}
 	]
 }
