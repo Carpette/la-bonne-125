@@ -106,13 +106,23 @@ function matches(m) {
 }
 
 function sortFn(a, b) {
-	const nil = (v, d) => v == null ? d : v;
+	// les valeurs inconnues (null) vont toujours en fin de liste
+	const cmp = (key, dir) => {
+		const va = a[key], vb = b[key];
+		if (va == null && vb == null) return 0;
+		if (va == null) return 1;
+		if (vb == null) return -1;
+		return dir * (va - vb);
+	};
 	switch (state.sort) {
-		case 'prix-asc': return nil(a.prix, 99999) - nil(b.prix, 99999);
-		case 'prix-desc': return nil(b.prix, 0) - nil(a.prix, 0);
-		case 'poids': return nil(a.poids, 999) - nil(b.poids, 999);
-		case 'selle': return nil(a.selle, 9999) - nil(b.selle, 9999);
-		case 'ch': return nil(b.puissance, 0) - nil(a.puissance, 0);
+		case 'prix-asc': return cmp('prix', 1);
+		case 'prix-desc': return cmp('prix', -1);
+		case 'poids-asc': return cmp('poids', 1);
+		case 'poids-desc': return cmp('poids', -1);
+		case 'selle-asc': return cmp('selle', 1);
+		case 'selle-desc': return cmp('selle', -1);
+		case 'ch-asc': return cmp('puissance', 1);
+		case 'ch-desc': return cmp('puissance', -1);
 		default: return (a.marque + a.modele).localeCompare(b.marque + b.modele, 'fr');
 	}
 }

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='%23F0B429'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial Black'>125</text></svg>">
 </head>
 <body>
@@ -98,11 +98,14 @@
 			<label class="sort">Trier :
 				<select id="f-sort">
 					<option value="marque">Marque A→Z</option>
-					<option value="prix-asc">Prix croissant</option>
-					<option value="prix-desc">Prix décroissant</option>
-					<option value="poids">Poids (léger d'abord)</option>
-					<option value="selle">Selle (basse d'abord)</option>
-					<option value="ch">Puissance (forte d'abord)</option>
+					<option value="prix-asc">Prix ↑ (moins cher d'abord)</option>
+					<option value="prix-desc">Prix ↓ (plus cher d'abord)</option>
+					<option value="poids-asc">Poids ↑ (légère d'abord)</option>
+					<option value="poids-desc">Poids ↓ (lourde d'abord)</option>
+					<option value="selle-asc">Selle ↑ (basse d'abord)</option>
+					<option value="selle-desc">Selle ↓ (haute d'abord)</option>
+					<option value="ch-desc">Puissance ↓ (forte d'abord)</option>
+					<option value="ch-asc">Puissance ↑ (douce d'abord)</option>
 				</select>
 			</label>
 		</div>
@@ -180,6 +183,6 @@
 	<button id="photo-quit" class="btn-ghost btn-close">Fermer</button>
 </dialog>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
