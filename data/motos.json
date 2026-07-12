@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"maj": "2026-07-12",
-		"note": "Prix publics indicatifs (France, 2026) et hauteurs de selle approximatives — à vérifier en concession. Synthèses presse rédigées à partir d'essais et retours publiés en ligne. Données éditables via le panneau admin."
+		"note": "Prix publics indicatifs (France, 2026) et hauteurs de selle approximatives — à vérifier en concession. Données éditables via le panneau admin."
 	},
 	"motos": [
 		{
@@ -21,8 +21,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "Légère (130 kg), position neutre, fiabilité Honda et excellente revente. À 1m75 la selle de 816 mm tombe parfaitement. Le choix « qualité avant tout ».",
-			"avisPresse": "La presse salue unanimement la finition, la partie-cycle (fourche Showa) et le freinage, dignes de motos plus grosses. Reproche récurrent : le tarif, et un moteur moins démonstratif que d'autres 15 ch."
+			"avisIA": "Légère (130 kg), position neutre, fiabilité Honda et excellente revente. À 1m75 la selle de 816 mm tombe parfaitement. Le choix « qualité avant tout »."
 		},
 		{
 			"id": "honda-cb125f",
@@ -41,8 +40,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "Le choix rationnel : imbattable en coût d'usage et fiabilité. Moins fun (11 ch, tambour arrière) mais parfaite pour apprendre et enchaîner les trajets cours sans souci.",
-			"avisPresse": "Considérée comme la reine de la sobriété : consommation record, fiabilité sans histoire, entretien économique. Les essayeurs la trouvent en revanche peu excitante et limitée sur voie rapide."
+			"avisIA": "Le choix rationnel : imbattable en coût d'usage et fiabilité. Moins fun (11 ch, tambour arrière) mais parfaite pour apprendre et enchaîner les trajets cours sans souci."
 		},
 		{
 			"id": "honda-monkey-125",
@@ -61,8 +59,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Capital sympathie et qualité de fabrication salués partout ; tous les essais rappellent que c'est un jouet urbain, pas une moto de trajet."
+			"avisIA": ""
 		},
 		{
 			"id": "honda-msx-grom",
@@ -81,8 +78,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Réputée increvable et hyper joueuse, cote d'occasion solide. Position compacte, à réserver aux courts trajets."
+			"avisIA": ""
 		},
 		{
 			"id": "honda-dax-125",
@@ -101,8 +97,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même recette attachante que la Monkey avec plus de place ; jugée chère pour l'usage réel."
+			"avisIA": ""
 		},
 		{
 			"id": "honda-super-cub",
@@ -121,8 +116,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Icône saluée pour sa consommation minuscule et son embrayage automatique très facile ; freinage et tenue de route jugés datés."
+			"avisIA": ""
 		},
 		{
 			"id": "yamaha-mt-125",
@@ -130,7 +124,7 @@
 			"modele": "MT-125",
 			"categorie": "Roadster",
 			"origine": "Japon",
-			"prix": 5699,
+			"prix": 5499,
 			"puissance": 15,
 			"poids": 142,
 			"selle": 810,
@@ -141,8 +135,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "La polyvalente de référence : assez de couple pour les départementales vallonnées autour de Bully, équipement complet, réseau partout, revente facile. Selle 810 mm : impeccable à 1m75.",
-			"avisPresse": "Référence des comparatifs : moteur VVA plein partout, châssis sérieux, équipement complet. Critiques sur le prix qui frôle les 5 700 € et une selle ferme."
+			"avisIA": "La polyvalente de référence : assez de couple pour les départementales vallonnées autour de Bully, équipement complet, réseau partout, revente facile. Selle 810 mm : impeccable à 1m75."
 		},
 		{
 			"id": "yamaha-yzf-r125",
@@ -161,8 +154,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Saluée comme une vraie petite sportive : partie-cycle rigoureuse, position engagée. La presse conseille d'assumer cette ergonomie au quotidien."
+			"avisIA": ""
 		},
 		{
 			"id": "yamaha-xsr125",
@@ -181,8 +173,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "Mécanique de MT-125 avec une position plus détendue et un style qui vieillit bien. Très bon compromis trajets quotidiens + balades plaisir.",
-			"avisPresse": "Les essayeurs apprécient la position plus droite que la MT et la qualité perçue, avec la même mécanique VVA. Jugée un peu chère, comme toutes les Yamaha 125."
+			"avisIA": "Mécanique de MT-125 avec une position plus détendue et un style qui vieillit bien. Très bon compromis trajets quotidiens + balades plaisir."
 		},
 		{
 			"id": "yamaha-wr125r",
@@ -190,10 +181,10 @@
 			"modele": "WR125R (2026)",
 			"categorie": "Trail",
 			"origine": "Japon",
-			"prix": 4799,
-			"puissance": 14.5,
+			"prix": 4999,
+			"puissance": 15,
 			"poids": 138,
-			"selle": 875,
+			"selle": 900,
 			"freinage": "ABS",
 			"photo": "",
 			"site": "https://www.yamaha-motor.eu/fr/",
@@ -201,8 +192,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "L'option « campagne » : chemins, routes dégradées, position dominante. Selle haute (~900 mm) mais à 1m75 ça passe. Moins à l'aise sur les longs trajets rapides qu'un roadster.",
-			"avisPresse": "Essais 2026 très positifs : seule vraie trail A1 du marché, moteur VVA jugé le meilleur de la catégorie, légère (138 kg) et réellement capable en tout-terrain. Bémols relevés : selle à 875 mm, suspensions orientées confort et 14,5 ch qui plafonnent vite sur route rapide."
+			"avisIA": "L'option « campagne » : chemins, routes dégradées, position dominante. Selle haute (~900 mm) mais à 1m75 ça passe. Moins à l'aise sur les longs trajets rapides qu'un roadster."
 		},
 		{
 			"id": "suzuki-gsx-s125",
@@ -221,8 +211,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Appréciée pour sa légèreté record et son moteur qui aime les tours ; finition et équipement jugés en retrait face aux références."
+			"avisIA": ""
 		},
 		{
 			"id": "suzuki-gsx-r125",
@@ -241,8 +230,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Agilité saluée et carénage réussi ; modèle vieillissant dans la gamme, remises fréquentes en concession."
+			"avisIA": ""
 		},
 		{
 			"id": "kawasaki-z125",
@@ -261,8 +249,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Essais corrects : moteur plein à haut régime, look réussi ; jugée un cran derrière MT-125 et Duke en agrément général."
+			"avisIA": ""
 		},
 		{
 			"id": "kawasaki-ninja-125",
@@ -281,8 +268,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Position accessible pour une sportive et finition sérieuse ; moteur jugé creux à bas régime par plusieurs essayeurs."
+			"avisIA": ""
 		},
 		{
 			"id": "ktm-125-duke",
@@ -290,7 +276,7 @@
 			"modele": "125 Duke",
 			"categorie": "Roadster",
 			"origine": "Autriche",
-			"prix": 4899,
+			"prix": 5449,
 			"puissance": 15,
 			"poids": 149,
 			"selle": 820,
@@ -301,8 +287,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "La « vraie moto » du segment selon la presse : châssis et freinage excellents, TFT complet. Critiques récurrentes : selle ferme et coûts d'entretien KTM."
+			"avisIA": ""
 		},
 		{
 			"id": "ktm-rc-125",
@@ -321,8 +306,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Partie-cycle saluée, la plus proche d'une vraie sportive d'initiation ; c'est aussi la plus lourde de la catégorie."
+			"avisIA": ""
 		},
 		{
 			"id": "husqvarna-svartpilen-125",
@@ -341,8 +325,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Base Duke appréciée, style singulier qui fait son succès ; on paie un supplément pour le design."
+			"avisIA": ""
 		},
 		{
 			"id": "aprilia-rs-125",
@@ -355,14 +338,13 @@
 			"poids": 144,
 			"selle": 820,
 			"freinage": "ABS",
-			"photo": "",
+			"photo": "https://images.piaggio.com/aprilia/vehicles/ap6102100ebs00/ap6102100ebs03/ap6102100ebs03-01-s.png",
 			"site": "https://www.aprilia.com/fr_FR/",
 			"notes": "Châssis alu, fourche inversée, traction control (2026). Version GP Replica dispo.",
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Référence sportive historique : châssis aluminium salué, position exigeante. Le millésime 2026 gagne le contrôle de traction."
+			"avisIA": ""
 		},
 		{
 			"id": "aprilia-tuono-125",
@@ -381,8 +363,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même base que la RS avec une ergonomie plus tolérante ; souvent recommandée à sa place pour un usage quotidien."
+			"avisIA": ""
 		},
 		{
 			"id": "aprilia-sx-125",
@@ -395,14 +376,13 @@
 			"poids": 134,
 			"selle": 880,
 			"freinage": "ABS",
-			"photo": "",
+			"photo": "https://www.motoplanete.com/aprilia/galerie/Aprilia-SX-125-2025/9.webp",
 			"site": "https://www.aprilia.com/fr_FR/",
 			"notes": "Supermotard accessible, selle haute.",
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Supermotard jugé joueur et accessible ; équipement basique."
+			"avisIA": ""
 		},
 		{
 			"id": "aprilia-rx-125",
@@ -415,14 +395,13 @@
 			"poids": 134,
 			"selle": 905,
 			"freinage": "ABS",
-			"photo": "",
+			"photo": "https://www.motoplanete.com/aprilia/millesimes/Aprilia-RX-125/2025_1.webp",
 			"site": "https://www.aprilia.com/fr_FR/",
 			"notes": "Version enduro de la SX, roue de 21\".",
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Apprécié comme initiation enduro abordable ; performances routières limitées."
+			"avisIA": ""
 		},
 		{
 			"id": "fantic-caballero-125",
@@ -441,8 +420,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Scrambler salué pour son caractère et sa finition, authenticité appréciée ; tarif soutenu."
+			"avisIA": ""
 		},
 		{
 			"id": "fantic-xef-125",
@@ -461,8 +439,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Considérée comme une vraie enduro d'initiation, très typée ; peu adaptée à un usage routier principal."
+			"avisIA": ""
 		},
 		{
 			"id": "fantic-xmf-125",
@@ -481,8 +458,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même base saluée que la XEF en version motard ; usage loisir avant tout."
+			"avisIA": ""
 		},
 		{
 			"id": "fantic-stealth-125",
@@ -501,8 +477,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Trop récente pour des essais complets ; reprend le moteur Minarelli VVA bien connu et apprécié."
+			"avisIA": ""
 		},
 		{
 			"id": "beta-rr-125-lc",
@@ -521,8 +496,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Réputation d'enduro sérieuse et légère ; l'usage route reste secondaire."
+			"avisIA": ""
 		},
 		{
 			"id": "beta-rr-125-motard",
@@ -541,8 +515,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Mêmes qualités que la RR en version bitume ; loisir avant tout."
+			"avisIA": ""
 		},
 		{
 			"id": "fbmondial-hps-125",
@@ -561,8 +534,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Look très salué en essais, exécution correcte ; mécanique simple et performances modestes."
+			"avisIA": ""
 		},
 		{
 			"id": "fbmondial-piega-125",
@@ -581,8 +553,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté encore peu essayée par la presse française."
+			"avisIA": ""
 		},
 		{
 			"id": "malaguti-drakon-125",
@@ -601,8 +572,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Design remarqué ; essais peu nombreux, prestations jugées correctes pour le prix (plateforme KSR)."
+			"avisIA": ""
 		},
 		{
 			"id": "malaguti-xsm-125",
@@ -621,8 +591,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Petit supermotard d'accès apprécié des jeunes permis ; mécanique simple, finition basique."
+			"avisIA": ""
 		},
 		{
 			"id": "malaguti-xtm-125",
@@ -641,8 +610,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Pendant enduro du XSM : même verdict, simple et abordable."
+			"avisIA": ""
 		},
 		{
 			"id": "morbidelli-f125",
@@ -661,8 +629,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Marque relancée : premiers retours corrects pour le prix, réseau encore en construction."
+			"avisIA": ""
 		},
 		{
 			"id": "benelli-leoncino-125",
@@ -681,8 +648,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Régulièrement citée comme le meilleur rapport équipement/prix du néo-rétro : TFT, full LED et finition surprenante sous 3 500 €. Le moteur de 12,8 ch est jugé suffisant sans plus."
+			"avisIA": ""
 		},
 		{
 			"id": "benelli-tnt-125",
@@ -701,8 +667,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Mini roadster apprécié pour le fun à petit prix ; finition et freinage basiques."
+			"avisIA": ""
 		},
 		{
 			"id": "benelli-bn-125",
@@ -721,8 +686,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Un des tickets d'entrée les moins chers du neuf ; essais rares, prestations honnêtes sans éclat."
+			"avisIA": ""
 		},
 		{
 			"id": "rieju-century-125",
@@ -741,8 +705,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Peu d'essais presse ; la marque est reconnue pour son sérieux sur les petites cylindrées."
+			"avisIA": ""
 		},
 		{
 			"id": "rieju-aventura-125",
@@ -761,8 +724,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté, pas encore d'essais de référence."
+			"avisIA": ""
 		},
 		{
 			"id": "macbor-montana-xr1",
@@ -781,8 +743,7 @@
 			"sceauParrain": true,
 			"avisParrain": "Pratique, livré avec des valises, et semble bien adaptée à ta taille. Personnellement je suis trouve une bonne gueule. \nÀ aller essayer",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Bien accueillie en Espagne pour son équipement ; réseau français encore limité."
+			"avisIA": ""
 		},
 		{
 			"id": "macbor-rockster-125",
@@ -801,8 +762,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Custom d'accès correct selon les rares essais ; le moteur 4 soupapes 2026 corrige le principal reproche."
+			"avisIA": ""
 		},
 		{
 			"id": "macbor-shifter-125-evo",
@@ -821,8 +781,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Fiche technique remarquée à l'EICMA (caméra frontale, ABS + contrôle de traction, keyless) ; essais français encore rares."
+			"avisIA": ""
 		},
 		{
 			"id": "mitt-125-gp",
@@ -841,8 +800,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Look racing salué, prestations correctes pour le prix ; réseau confidentiel."
+			"avisIA": ""
 		},
 		{
 			"id": "peugeot-pm01-125",
@@ -861,8 +819,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Essais corrects : moto cohérente et bien née, sans point fort marquant face aux références du segment."
+			"avisIA": ""
 		},
 		{
 			"id": "orcal-astor-125",
@@ -881,8 +838,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Très appréciée des jeunes permis pour le style et la légèreté ; mécanique simple réputée robuste. Performances modestes."
+			"avisIA": ""
 		},
 		{
 			"id": "orcal-sirio-125",
@@ -901,8 +857,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même base que l'Astor en café racer ; mêmes qualités, mêmes limites."
+			"avisIA": ""
 		},
 		{
 			"id": "orcal-nk01-125",
@@ -921,8 +876,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Roadster jugé correct et bien équipé pour le prix par les rares essais."
+			"avisIA": ""
 		},
 		{
 			"id": "orcal-epos-125",
@@ -941,8 +895,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté 2026, premiers essais à venir."
+			"avisIA": ""
 		},
 		{
 			"id": "orcal-altimo-125",
@@ -961,8 +914,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté 2026, premiers essais à venir."
+			"avisIA": ""
 		},
 		{
 			"id": "mash-seventy-125",
@@ -981,8 +933,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Valeur sûre du vintage accessible : style salué, mécanique éprouvée mais performances en retrait. Finition perfectible selon les retours propriétaires."
+			"avisIA": ""
 		},
 		{
 			"id": "mash-black-seven-125",
@@ -1001,8 +952,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même verdict que la Seventy dont elle dérive."
+			"avisIA": ""
 		},
 		{
 			"id": "mash-x-ride-125",
@@ -1021,8 +971,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Apprécié pour le look baroudeur ; capacités tout-chemin réelles mais limitées."
+			"avisIA": ""
 		},
 		{
 			"id": "mash-dirt-track-125",
@@ -1041,8 +990,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Style flat track salué ; mécanique partagée avec le reste de la gamme."
+			"avisIA": ""
 		},
 		{
 			"id": "archive-scrambler-125",
@@ -1061,8 +1009,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Marque appréciée pour le style néo-vintage à petit prix ; mécanique simple réputée robuste, performances modestes. Retours utilisateurs plutôt positifs, essais presse rares."
+			"avisIA": ""
 		},
 		{
 			"id": "archive-cafe-racer-125",
@@ -1081,8 +1028,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même plateforme et même verdict que la Scrambler, en habit café racer."
+			"avisIA": ""
 		},
 		{
 			"id": "archive-outback-125",
@@ -1101,8 +1047,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Version la plus polyvalente de la gamme selon les retours : à l'aise en ville comme sur chemins roulants."
+			"avisIA": ""
 		},
 		{
 			"id": "masai-black-rod-125",
@@ -1121,8 +1066,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Marque confidentielle : quasi aucun essai presse ; réseau et SAV à vérifier avant achat."
+			"avisIA": ""
 		},
 		{
 			"id": "masai-x-ray-125",
@@ -1141,8 +1085,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même prudence que pour le reste de la gamme : très peu de retours disponibles."
+			"avisIA": ""
 		},
 		{
 			"id": "magpower-bombers-125",
@@ -1161,8 +1104,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Peu d'essais ; positionnement premier prix, à inspecter de près en concession."
+			"avisIA": ""
 		},
 		{
 			"id": "magpower-r-stone-125",
@@ -1181,8 +1123,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Même verdict prudent que pour la Bombers."
+			"avisIA": ""
 		},
 		{
 			"id": "bluroc-hero-125",
@@ -1201,8 +1142,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Style très salué (ex-Bullit) ; mécanique simple et robuste, finition correcte. Esprit balade plus que performance."
+			"avisIA": ""
 		},
 		{
 			"id": "bluroc-legend-125",
@@ -1221,8 +1161,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Vintage apprécié pour son authenticité visuelle ; performances tranquilles."
+			"avisIA": ""
 		},
 		{
 			"id": "brixton-crossfire-125",
@@ -1241,8 +1180,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Design original salué et finition en net progrès ; bon rapport style/prix selon les essais."
+			"avisIA": ""
 		},
 		{
 			"id": "brixton-cromwell-125",
@@ -1261,8 +1199,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Vintage apprécié pour le look et le prix ; performances tranquilles."
+			"avisIA": ""
 		},
 		{
 			"id": "brixton-rayburn-125",
@@ -1281,8 +1218,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Café racer jugé réussi visuellement pour le prix ; mécanique sage."
+			"avisIA": ""
 		},
 		{
 			"id": "zontes-125-u",
@@ -1290,10 +1226,10 @@
 			"modele": "125-U",
 			"categorie": "Roadster",
 			"origine": "Chine",
-			"prix": 3895,
-			"puissance": 14.5,
+			"prix": 3299,
+			"puissance": 15,
 			"poids": 148,
-			"selle": 800,
+			"selle": 795,
 			"freinage": "ABS",
 			"photo": "",
 			"site": "https://www.zontes.fr/",
@@ -1301,8 +1237,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": true,
-			"avisIA": "Le meilleur rapport équipement/prix du marché. Fiabilité en net progrès et réseau qui grandit, mais revente et SAV moins éprouvés que chez les japonaises. Bon plan si le budget prime.",
-			"avisPresse": "Retours presse et propriétaires globalement très positifs : équipement inédit à ce prix (keyless, TFT, ABS Bosch), moteur maison réputé robuste, ~110 km/h en pointe. Vigilance sur l'électronique keyless parfois capricieuse à l'humidité et un réseau encore clairsemé."
+			"avisIA": "Le meilleur rapport équipement/prix du marché. Fiabilité en net progrès et réseau qui grandit, mais revente et SAV moins éprouvés que chez les japonaises. Bon plan si le budget prime."
 		},
 		{
 			"id": "zontes-125-g1",
@@ -1321,8 +1256,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Mêmes qualités et mêmes points de vigilance que la 125-U dont elle partage la plateforme."
+			"avisIA": ""
 		},
 		{
 			"id": "zontes-scrambler-125",
@@ -1341,8 +1275,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Bien accueillie ; mêmes atouts d'équipement et mêmes réserves réseau que le reste de la gamme."
+			"avisIA": ""
 		},
 		{
 			"id": "zontes-scrambler-x-125",
@@ -1361,8 +1294,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté 2026, essais à venir."
+			"avisIA": ""
 		},
 		{
 			"id": "voge-125r",
@@ -1370,7 +1302,7 @@
 			"modele": "125R",
 			"categorie": "Roadster",
 			"origine": "Chine",
-			"prix": 3499,
+			"prix": 2999,
 			"puissance": 14.1,
 			"poids": 128,
 			"selle": 795,
@@ -1381,8 +1313,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Essais et retours propriétaires enthousiastes sur le rapport qualité/prix : 128 kg, fourche inversée, ABS Bosch, garantie 3 ans, ~2,8 L/100. Bémols : recul limité au-delà de 15 000 km et réseau en construction."
+			"avisIA": ""
 		},
 		{
 			"id": "cfmoto-papio-125",
@@ -1401,8 +1332,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Mini appréciée comme alternative sérieuse au Grom, finition saluée pour le prix."
+			"avisIA": ""
 		},
 		{
 			"id": "cfmoto-papio-xo1",
@@ -1421,8 +1351,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Déclinaison vintage bien reçue ; même verdict que la Papio."
+			"avisIA": ""
 		},
 		{
 			"id": "qjmotor-srk-125",
@@ -1441,8 +1370,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Équipement généreux pour le prix ; QJ Motor (maison-mère de Benelli) monte en gamme, réseau en expansion."
+			"avisIA": ""
 		},
 		{
 			"id": "qjmotor-srv-125",
@@ -1461,8 +1389,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté, essais à venir."
+			"avisIA": ""
 		},
 		{
 			"id": "qjmotor-srt-125-dx",
@@ -1481,8 +1408,7 @@
 			"sceauParrain": true,
 			"avisParrain": "Gueule d'enfer, parfaite pour venir faire l'andouille avec moi sur des chemins. \nJe ne suis pas objectif, mais je recommande quand même chaudement",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Nouveauté, essais à venir."
+			"avisIA": ""
 		},
 		{
 			"id": "keeway-rkf-125",
@@ -1501,8 +1427,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Premier prix jugé correct par les rares essais ; finition et freinage basiques."
+			"avisIA": ""
 		},
 		{
 			"id": "keeway-superlight-125",
@@ -1521,8 +1446,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Custom d'initiation apprécié pour sa selle très basse ; performances très tranquilles."
+			"avisIA": ""
 		},
 		{
 			"id": "sym-nht-125",
@@ -1541,8 +1465,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Marque réputée fiable ; la NH-T est vue comme un utilitaire honnête, sans prétention sportive."
+			"avisIA": ""
 		},
 		{
 			"id": "supersoco-tcmax",
@@ -1561,8 +1484,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Référence électrique du segment : agrément et coûts d'usage salués. L'autonomie réelle (~80-100 km) limite l'usage rural et les trajets vacances."
+			"avisIA": ""
 		},
 		{
 			"id": "vmoto-stash",
@@ -1581,8 +1503,7 @@
 			"sceauParrain": false,
 			"avisParrain": "",
 			"sceauIA": false,
-			"avisIA": "",
-			"avisPresse": "Essais positifs sur les performances et l'autonomie record pour la catégorie ; prix d'achat élevé."
+			"avisIA": ""
 		}
 	]
 }
