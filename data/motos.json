@@ -840,7 +840,7 @@
 			"modele": "Aventura 125",
 			"categorie": "Trail",
 			"origine": "Espagne",
-			"prix": null,
+			"prix": 3799,
 			"puissance": 15,
 			"poids": null,
 			"selle": null,
@@ -853,7 +853,8 @@
 			"sceauIA": false,
 			"avisIA": "",
 			"avisPresse": "Nouveauté, pas encore d'essais de référence.",
-			"equipements": []
+			"equipements": [],
+			"suivreOccasion": false
 		},
 		{
 			"id": "macbor-montana-xr1",
