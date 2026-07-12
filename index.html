@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La bonne 125 — choisir sa première moto</title>
+<meta name="description" content="Toutes les motos 125cc du marché français : filtres, prix, avis du parrain et suggestions IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='%23F0B429'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial Black'>125</text></svg>">
+</head>
+<body>
+
+<header class="site-header">
+	<div class="borne">
+		<div class="borne-top">D 125</div>
+		<div class="borne-body">km 0</div>
+	</div>
+	<div class="header-text">
+		<p class="eyebrow">Le comparateur de ton parrain</p>
+		<h1>La bonne <span class="cent25">125</span></h1>
+		<p class="profil">Pour une pilote d'1m75 · permis A1 en poche à 17 ans · campagne lyonnaise ·
+		trajets cours, vacances &amp; plaisir</p>
+	</div>
+	<button id="btn-admin" class="btn-admin" title="Espace parrain">⚙ parrain</button>
+</header>
+
+<div class="legend-bar">
+	<span class="stamp stamp-mini">Approuvé par parrain</span>
+	<span class="badge-ia badge-mini">◆ Suggestion de l'IA</span>
+	<span class="legend-note">= les modèles repérés pour toi. Clique une moto pour le détail.</span>
+</div>
+
+<main class="layout">
+	<aside class="filters" id="filters">
+		<div class="filters-head">
+			<h2>Filtres</h2>
+			<button id="btn-reset" class="btn-ghost">Tout effacer</button>
+		</div>
+
+		<input type="search" id="f-search" placeholder="Rechercher un modèle, une marque…" autocomplete="off">
+
+		<fieldset>
+			<legend>Sélections</legend>
+			<label class="check"><input type="checkbox" id="f-parrain"> <span class="stamp stamp-mini">Approuvé par parrain</span></label>
+			<label class="check"><input type="checkbox" id="f-ia"> <span class="badge-ia badge-mini">◆ Suggestion IA</span></label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Type de moto</legend>
+			<div id="f-categories" class="chips"></div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Budget max <output id="out-prix">—</output></legend>
+			<input type="range" id="f-prix" min="2500" max="6000" step="100" value="6000">
+			<label class="check small"><input type="checkbox" id="f-prix-nc" checked> Inclure les prix non communiqués</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Hauteur de selle max <output id="out-selle">—</output></legend>
+			<input type="range" id="f-selle" min="720" max="960" step="10" value="960">
+			<p class="hint">À 1m75, tout passe jusqu'à ~880 mm sans souci. Au-delà : pointe des pieds.</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Puissance min <output id="out-ch">—</output></legend>
+			<input type="range" id="f-ch" min="7" max="15" step="1" value="7">
+			<p class="hint">15 ch = le maximum légal A1. Utile pour les routes à 80/90.</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Divers</legend>
+			<label class="check"><input type="checkbox" id="f-abs"> ABS uniquement</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Origine</legend>
+			<div id="f-origines" class="chips"></div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Marque</legend>
+			<div id="f-marques" class="marques-list"></div>
+		</fieldset>
+	</aside>
+
+	<section class="results">
+		<div class="results-bar">
+			<span id="count">…</span>
+			<label class="sort">Trier :
+				<select id="f-sort">
+					<option value="marque">Marque A→Z</option>
+					<option value="prix-asc">Prix croissant</option>
+					<option value="prix-desc">Prix décroissant</option>
+					<option value="poids">Poids (léger d'abord)</option>
+					<option value="selle">Selle (basse d'abord)</option>
+					<option value="ch">Puissance (forte d'abord)</option>
+				</select>
+			</label>
+		</div>
+		<div id="grid" class="grid" aria-live="polite"></div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<p>Prix publics indicatifs 2026 et hauteurs de selle approximatives — toujours vérifier en concession et <strong>essayer la moto</strong>.
+	Pense au budget équipement (casque, gants, blouson, bottes : 500–1000 €) et à l'assurance jeune conducteur.</p>
+	<p id="meta-maj"></p>
+</footer>
+
+<!-- Fiche détail -->
+<dialog id="modal">
+	<div id="modal-content"></div>
+</dialog>
+
+<!-- Panneau admin -->
+<dialog id="admin-panel">
+	<h2>Espace parrain</h2>
+	<div id="admin-login">
+		<p>Colle un token GitHub <em>fine-grained</em> avec la permission <strong>Contents : Read and write</strong> sur ce dépôt. Il reste dans cet onglet uniquement (sessionStorage).</p>
+		<input type="password" id="admin-token" placeholder="github_pat_…">
+		<button id="btn-token-save" class="btn-primary">Activer le mode édition</button>
+	</div>
+	<div id="admin-actions" hidden>
+		<p class="ok">Mode édition actif. Ouvre une fiche moto pour poser ton sceau, écrire un avis, ajuster un prix ou coller l'URL d'une photo officielle.</p>
+		<p id="dirty-count" class="hint"></p>
+		<button id="btn-publish" class="btn-primary">Publier sur le site</button>
+		<button id="btn-logout" class="btn-ghost">Quitter le mode édition</button>
+		<p id="publish-status" class="hint"></p>
+	</div>
+	<button class="btn-ghost btn-close" onclick="document.getElementById('admin-panel').close()">Fermer</button>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
