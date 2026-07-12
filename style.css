@@ -368,3 +368,39 @@ dialog::backdrop { background: rgba(35,38,43,.55); }
 .avis.avis-presse { border-color: var(--bleu); background: rgba(41,65,143,.05); }
 #photo-panel h2 { font-family: var(--font-display); margin-top: 0; }
 #paste-zone:focus { border-color: var(--encre); background: rgba(240,180,41,.07); }
+
+/* onglets */
+.tabs { max-width: 1280px; margin: 0 auto; padding: 0 24px 18px; display: flex; gap: 10px; }
+.tab {
+	font-family: var(--font-display); font-weight: 800; font-size: 15px;
+	background: var(--carte); color: var(--encre-2);
+	border: 1.5px solid var(--trait); border-radius: 999px;
+	padding: 8px 20px; cursor: pointer;
+}
+.tab.on { background: var(--encre); color: var(--papier); border-color: var(--encre); box-shadow: 3px 3px 0 var(--jaune); }
+.tab:focus-visible { outline: 2px solid var(--jaune); }
+
+/* vue occasion */
+.occasion { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; }
+.occasion h2 { font-family: var(--font-display); font-weight: 900; font-size: 26px; margin: 0 0 6px; }
+.occ-row {
+	background: var(--carte); border: 1.5px solid var(--trait); border-radius: var(--radius);
+	padding: 14px 16px; margin: 10px 0;
+	display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.occ-row .who-seal { flex: 0 0 auto; }
+.occ-name { flex: 1 1 200px; }
+.occ-name .card-modele { display: block; }
+.occ-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-lbc, .btn-lac {
+	display: inline-block; text-decoration: none; font-weight: 700; font-size: 13px;
+	border-radius: 8px; padding: 8px 14px; border: 1.5px solid transparent;
+}
+.btn-lbc { background: #FF6E14; color: #fff; }
+.btn-lac { background: #fff; color: var(--bleu); border-color: var(--bleu); }
+.btn-lbc:hover, .btn-lac:hover { filter: brightness(.93); }
+.occasion-conseils {
+	margin-top: 24px; border-left: 4px solid var(--jaune); background: rgba(240,180,41,.08);
+	padding: 12px 16px; border-radius: 0 8px 8px 0;
+}
+.occasion-conseils h3 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }

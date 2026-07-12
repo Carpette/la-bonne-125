@@ -33,6 +33,11 @@
 	<span class="legend-note">= les modèles repérés pour toi. Clique une moto pour le détail.</span>
 </div>
 
+<nav class="tabs">
+	<button id="tab-catalogue" class="tab on">Catalogue neuf</button>
+	<button id="tab-occasion" class="tab">Occasion</button>
+</nav>
+
 <main class="layout">
 	<aside class="filters" id="filters">
 		<div class="filters-head">
@@ -104,6 +109,19 @@
 		<div id="grid" class="grid" aria-live="polite"></div>
 	</section>
 </main>
+
+<section id="occasion" class="occasion" hidden>
+	<div class="occasion-inner">
+		<h2>Chercher en occasion</h2>
+		<p class="hint">Les modèles suivis ici sont ceux avec un sceau (parrain ou IA) et ceux cochés « suivre en occasion » dans l'admin.
+		Chaque bouton ouvre la recherche déjà remplie, triée par annonces récentes — pense à régler ta zone géographique une fois sur place, le site s'en souviendra.</p>
+		<div id="occasion-list"></div>
+		<div class="occasion-conseils">
+			<h3>Les réflexes occasion</h3>
+			<p>Privilégier une première main avec factures d'entretien et deux clés. Vérifier l'état du kit chaîne, des pneus et des points de chute (leviers, embouts de guidon, clignotants). Un faible kilométrage n'est pas toujours bon signe sur une 125 : les moteurs n'aiment pas dormir. Contrôler que la carte grise est au nom du vendeur et faire un essai à froid. Sur ce segment, une japonaise de 2 à 3 ans avec 10 000 km se trouve souvent 30 à 40 % sous le prix du neuf.</p>
+		</div>
+	</div>
+</section>
 
 <footer class="site-footer">
 	<p>Prix publics indicatifs 2026 et hauteurs de selle approximatives — toujours vérifier en concession et <strong>essayer la moto</strong>.

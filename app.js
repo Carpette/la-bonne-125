@@ -215,6 +215,59 @@ function openModal(id) {
 	$('#modal').showModal();
 }
 
+/* ---------- onglet occasion ---------- */
+function slugMarque(marque) {
+	return marque.toLowerCase()
+		.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+		.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+function modeleCourt(m) {
+	return m.modele.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+}
+function lbcUrl(m) {
+	const q = encodeURIComponent((m.marque + ' ' + modeleCourt(m)).toLowerCase());
+	return `https://www.leboncoin.fr/recherche?category=3&text=${q}&sort=time`;
+}
+function lacUrl(m) {
+	return `https://www.lacentrale.fr/occasion-moto-marque-${slugMarque(m.marque)}.html`;
+}
+
+function renderOccasion() {
+	const suivis = DB.motos.filter(m => m.sceauParrain || m.sceauIA || m.suivreOccasion);
+	if (!suivis.length) {
+		$('#occasion-list').innerHTML = '<div class="empty">Aucun modèle suivi pour l\'instant. Pose un sceau ou coche « suivre en occasion » dans l\'admin.</div>';
+		return;
+	}
+	suivis.sort((a, b) => (b.sceauParrain - a.sceauParrain) || (a.marque + a.modele).localeCompare(b.marque + b.modele, 'fr'));
+	$('#occasion-list').innerHTML = suivis.map(m => `
+		<div class="occ-row">
+			<div class="occ-name">
+				<span class="card-marque">${escapeHtml(m.marque)}</span>
+				<span class="card-modele">${escapeHtml(m.modele)}</span>
+				<span class="hint">${m.prix ? 'neuf : ' + fmtPrix(m.prix) : ''}</span>
+			</div>
+			<div class="who-seal">
+				${m.sceauParrain ? '<span class="stamp stamp-mini">Parrain</span>' : ''}
+				${m.sceauIA ? '<span class="badge-ia badge-mini">◆ IA</span>' : ''}
+			</div>
+			<div class="occ-links">
+				<a class="btn-lbc" href="${lbcUrl(m)}" target="_blank" rel="noopener">leboncoin ↗</a>
+				<a class="btn-lac" href="${lacUrl(m)}" target="_blank" rel="noopener">La Centrale ↗</a>
+			</div>
+		</div>`).join('');
+}
+
+const tabCat = $('#tab-catalogue'), tabOcc = $('#tab-occasion');
+function switchTab(occ) {
+	document.querySelector('.layout').hidden = occ;
+	$('#occasion').hidden = !occ;
+	tabCat.classList.toggle('on', !occ);
+	tabOcc.classList.toggle('on', occ);
+	if (occ) renderOccasion();
+}
+tabCat.addEventListener('click', () => switchTab(false));
+tabOcc.addEventListener('click', () => switchTab(true));
+
 /* ---------- admin ---------- */
 const isAdmin = () => !!sessionStorage.getItem('gh_token');
 
@@ -230,6 +283,7 @@ function editZone(m) {
 		<label>URL de la photo officielle</label>
 		<input type="text" id="e-photo" value="${escapeHtml(m.photo || '')}" placeholder="https://…jpg">
 		<label class="check small"><input type="checkbox" id="e-ia" ${m.sceauIA ? 'checked' : ''}> Sceau « Suggestion IA » visible</label>
+		<label class="check small"><input type="checkbox" id="e-occ" ${m.suivreOccasion ? 'checked' : ''}> Suivre en occasion (sans sceau)</label>
 		<button class="btn-primary" id="e-save" style="margin-top:10px">Enregistrer la fiche</button>
 	</div>`;
 }
@@ -239,6 +293,7 @@ function bindEditZone(m) {
 		m.sceauParrain = $('#e-parrain').checked;
 		m.avisParrain = $('#e-avis').value.trim();
 		m.sceauIA = $('#e-ia').checked;
+		m.suivreOccasion = $('#e-occ').checked;
 		const p = $('#e-prix').value;
 		m.prix = p === '' ? null : +p;
 		m.photo = $('#e-photo').value.trim();
