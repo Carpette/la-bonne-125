@@ -400,10 +400,19 @@ $('#paste-zone').addEventListener('paste', async (e) => {
 	e.preventDefault();
 	const item = [...e.clipboardData.items].find(i => i.type.startsWith('image/'));
 	if (!item) { $('#photo-feedback').textContent = 'Pas d\'image dans le presse-papier. Clic droit sur l\'image → « Copier l\'image », puis Ctrl+V ici.'; return; }
+	uploadPhoto(item.getAsFile());
+});
+
+$('#photo-file').addEventListener('change', (e) => {
+	if (e.target.files && e.target.files[0]) uploadPhoto(e.target.files[0]);
+	e.target.value = '';
+});
+
+async function uploadPhoto(file) {
 	const m = photoQueue[photoIdx];
 	$('#photo-feedback').textContent = 'Redimensionnement et upload…';
 	try {
-		const jpegB64 = await toJpegB64(item.getAsFile(), 900, 0.82);
+		const jpegB64 = await toJpegB64(file, 900, 0.82);
 		const path = `data/photos/${m.id}.jpg`;
 		const url = `https://api.github.com/repos/${REPO}/contents/${path}`;
 		// sha si le fichier existe déjà (remplacement)
@@ -424,7 +433,7 @@ $('#paste-zone').addEventListener('paste', async (e) => {
 	} catch (err) {
 		$('#photo-feedback').textContent = 'Erreur : ' + err.message;
 	}
-});
+}
 
 function toJpegB64(file, maxW, quality) {
 	return new Promise((resolve, reject) => {

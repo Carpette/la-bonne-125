@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='%23F0B429'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial Black'>125</text></svg>">
 </head>
 <body>
@@ -165,6 +165,11 @@
 			Clique ici puis Ctrl+V pour coller l'image
 		</div>
 		<p id="photo-feedback" class="hint"></p>
+		<p class="hint" style="text-align:center">— ou —</p>
+		<label class="btn-primary" style="display:inline-block; cursor:pointer">Choisir une image (galerie / fichiers)
+			<input type="file" id="photo-file" accept="image/*" hidden>
+		</label>
+		<p class="hint">Sur mobile : ouvre la recherche d'images, appui long sur la photo → « Télécharger l'image », reviens ici et choisis-la.</p>
 		<details style="margin:8px 0">
 			<summary class="hint" style="cursor:pointer">Ou coller une URL d'image à la place</summary>
 			<input type="text" id="photo-url" placeholder="https://…jpg" style="width:100%; padding:7px 9px; border:1.5px solid var(--trait); border-radius:6px; margin:6px 0;">
@@ -175,6 +180,6 @@
 	<button id="photo-quit" class="btn-ghost btn-close">Fermer</button>
 </dialog>
 
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
