@@ -2,6 +2,9 @@
 'use strict';
 
 const REPO = 'Carpette/la-bonne-125';
+const EQUIPEMENTS = ["Valises de série", "Top case de série", "Béquille centrale", "TFT couleur",
+	"Connectivité smartphone", "Keyless", "Contrôle de traction", "USB", "Full LED",
+	"Protège-mains", "Sabot moteur", "TPMS", "Caméra embarquée"];
 const DATA_PATH = 'data/motos.json';
 
 let DB = null;          // { meta, motos }
@@ -16,6 +19,7 @@ let state = {
 	selleMax: 960,
 	chMin: 7,
 	abs: false,
+	equips: new Set(),
 	parrain: false,
 	ia: false,
 	sort: 'marque'
@@ -43,6 +47,16 @@ function buildFilters() {
 		`<button class="chip" data-cat="${c}">${c}</button>`).join('');
 	$('#f-origines').innerHTML = origines.map(o =>
 		`<button class="chip" data-orig="${o}">${o}</button>`).join('');
+	const usedEquips = EQUIPEMENTS.filter(e => DB.motos.some(m => (m.equipements || []).includes(e)));
+	$('#f-equips').innerHTML = usedEquips.map(e =>
+		`<button class="chip" data-equip="${e}">${e}</button>`).join('');
+	$('#f-equips').addEventListener('click', e => {
+		const q = e.target.dataset.equip;
+		if (!q) return;
+		state.equips.has(q) ? state.equips.delete(q) : state.equips.add(q);
+		e.target.classList.toggle('on');
+		render();
+	});
 	$('#f-marques').innerHTML = marques.map(m =>
 		`<label class="check"><input type="checkbox" data-marque="${m}"> ${m}</label>`).join('');
 
@@ -79,7 +93,7 @@ function buildFilters() {
 
 	$('#btn-reset').addEventListener('click', () => {
 		state = { ...state, search: '', cats: new Set(), origines: new Set(), marques: new Set(),
-			prixMax: 6000, prixNC: true, selleMax: 960, chMin: 7, abs: false, parrain: false, ia: false };
+			prixMax: 6000, prixNC: true, selleMax: 960, chMin: 7, abs: false, equips: new Set(), parrain: false, ia: false };
 		$('#f-search').value = '';
 		$('#f-prix').value = 6000; $('#f-prix-nc').checked = true;
 		$('#f-selle').value = 960; $('#f-ch').value = 7;
@@ -100,6 +114,10 @@ function matches(m) {
 	if (m.selle != null && m.selle > state.selleMax) return false;
 	if (m.puissance != null && m.puissance < state.chMin) return false;
 	if (state.abs && m.freinage !== 'ABS') return false;
+	if (state.equips.size) {
+		const eq = m.equipements || [];
+		for (const q of state.equips) if (!eq.includes(q)) return false;
+	}
 	if (state.parrain && !m.sceauParrain) return false;
 	if (state.ia && !m.sceauIA) return false;
 	return true;
@@ -153,6 +171,7 @@ function render() {
 				<span class="card-marque">${escapeHtml(m.marque)} · ${escapeHtml(m.origine)}</span>
 				<span class="card-modele">${escapeHtml(m.modele)}</span>
 				<span class="card-cat">${m.categorie} · ${m.freinage || '—'}</span>
+				${(m.equipements || []).length ? `<div class="equip-row">${m.equipements.slice(0, 3).map(e => `<span class="equip-chip">${e}</span>`).join('')}${m.equipements.length > 3 ? `<span class="equip-chip">+${m.equipements.length - 3}</span>` : ''}</div>` : ''}
 				<div class="card-specs">
 					<span class="card-prix">${fmtPrix(m.prix)}</span>
 					<span>${m.puissance != null ? m.puissance + ' ch' : '— ch'}</span>
@@ -209,6 +228,7 @@ function openModal(id) {
 			<tr><td>Hauteur de selle</td><td>${m.selle != null ? m.selle + ' mm' : 'n.c.'}</td></tr>
 			<tr><td>Freinage</td><td>${m.freinage || 'n.c.'}</td></tr>
 		</table>
+		${(m.equipements || []).length ? `<div class="equip-row">${m.equipements.map(e => `<span class="equip-chip">${escapeHtml(e)}</span>`).join('')}</div>` : ''}
 		${m.notes ? `<p>${escapeHtml(m.notes)}</p>` : ''}
 		${m.avisPresse ? `<div class="avis avis-presse"><div class="who">Ce qu'en disent les essais</div>${escapeHtml(m.avisPresse)}</div>` : ''}
 		${m.sceauParrain && m.avisParrain ? `<div class="avis"><div class="who">L'avis du parrain</div>${escapeHtml(m.avisParrain)}</div>` : ''}
@@ -294,6 +314,8 @@ function editZone(m) {
 		<input type="text" id="e-photo" value="${escapeHtml(m.photo || '')}" placeholder="https://…jpg">
 		<label class="check small"><input type="checkbox" id="e-ia" ${m.sceauIA ? 'checked' : ''}> Sceau « Suggestion IA » visible</label>
 		<label class="check small"><input type="checkbox" id="e-occ" ${m.suivreOccasion ? 'checked' : ''}> Suivre en occasion (sans sceau)</label>
+		<label>Équipements de série</label>
+		<div class="chips">${EQUIPEMENTS.map(e => `<label class="check small" style="margin:2px 10px 2px 0"><input type="checkbox" class="e-equip" value="${e}" ${(m.equipements || []).includes(e) ? 'checked' : ''}> ${e}</label>`).join('')}</div>
 		<button class="btn-primary" id="e-save" style="margin-top:10px">Enregistrer la fiche</button>
 	</div>`;
 }
@@ -304,6 +326,7 @@ function bindEditZone(m) {
 		m.avisParrain = $('#e-avis').value.trim();
 		m.sceauIA = $('#e-ia').checked;
 		m.suivreOccasion = $('#e-occ').checked;
+		m.equipements = [...document.querySelectorAll('.e-equip:checked')].map(c => c.value);
 		const p = $('#e-prix').value;
 		m.prix = p === '' ? null : +p;
 		m.photo = $('#e-photo').value.trim();
