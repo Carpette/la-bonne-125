@@ -128,10 +128,33 @@
 		<p class="ok">Mode édition actif. Ouvre une fiche moto pour poser ton sceau, écrire un avis, ajuster un prix ou coller l'URL d'une photo officielle.</p>
 		<p id="dirty-count" class="hint"></p>
 		<button id="btn-publish" class="btn-primary">Publier sur le site</button>
+		<button id="btn-photo-mode" class="btn-primary" style="background:var(--ia)">Mode photos rapide</button>
 		<button id="btn-logout" class="btn-ghost">Quitter le mode édition</button>
 		<p id="publish-status" class="hint"></p>
+		<p id="photo-status" class="hint"></p>
 	</div>
 	<button class="btn-ghost btn-close" onclick="document.getElementById('admin-panel').close()">Fermer</button>
+</dialog>
+
+<!-- Mode photos rapide -->
+<dialog id="photo-panel">
+	<h2>Mode photos rapide</h2>
+	<div id="photo-current"></div>
+	<div id="photo-tools">
+		<p class="hint">1. <a id="photo-gimg" href="#" target="_blank" rel="noopener"><strong>Ouvrir la recherche d'images ↗</strong></a> — 2. Clic droit sur une photo officielle → « Copier l'image » — 3. Colle-la ci-dessous.</p>
+		<div id="paste-zone" tabindex="0" contenteditable="true" spellcheck="false"
+			style="border:2px dashed var(--jaune-fonce); border-radius:10px; padding:26px; text-align:center; color:var(--encre-2); outline:none; caret-color:transparent;">
+			Clique ici puis Ctrl+V pour coller l'image
+		</div>
+		<p id="photo-feedback" class="hint"></p>
+		<details style="margin:8px 0">
+			<summary class="hint" style="cursor:pointer">Ou coller une URL d'image à la place</summary>
+			<input type="text" id="photo-url" placeholder="https://…jpg" style="width:100%; padding:7px 9px; border:1.5px solid var(--trait); border-radius:6px; margin:6px 0;">
+			<button id="photo-url-save" class="btn-primary">Enregistrer l'URL</button>
+		</details>
+		<button id="photo-skip" class="btn-ghost">Passer cette moto →</button>
+	</div>
+	<button id="photo-quit" class="btn-ghost btn-close">Fermer</button>
 </dialog>
 
 <script src="app.js"></script>

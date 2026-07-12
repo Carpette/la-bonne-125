@@ -200,6 +200,7 @@ function openModal(id) {
 			<tr><td>Freinage</td><td>${m.freinage || 'n.c.'}</td></tr>
 		</table>
 		${m.notes ? `<p>${escapeHtml(m.notes)}</p>` : ''}
+		${m.avisPresse ? `<div class="avis avis-presse"><div class="who">Ce qu'en disent les essais</div>${escapeHtml(m.avisPresse)}</div>` : ''}
 		${m.sceauParrain && m.avisParrain ? `<div class="avis"><div class="who">L'avis du parrain</div>${escapeHtml(m.avisParrain)}</div>` : ''}
 		${m.sceauIA && m.avisIA ? `<div class="avis avis-ia"><div class="who">◆ L'avis de l'IA</div>${escapeHtml(m.avisIA)}</div>` : ''}
 		<div class="modal-links">
@@ -287,6 +288,107 @@ function b64utf8(str) {
 		bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
 	}
 	return btoa(bin);
+}
+
+/* ---------- mode photos rapide ---------- */
+let photoQueue = [];
+let photoIdx = 0;
+
+function ghHeaders() {
+	return { 'Authorization': 'Bearer ' + sessionStorage.getItem('gh_token'), 'Accept': 'application/vnd.github+json' };
+}
+
+$('#btn-photo-mode').addEventListener('click', () => {
+	photoQueue = DB.motos.filter(m => !m.photo);
+	photoIdx = 0;
+	if (!photoQueue.length) {
+		$('#photo-status').textContent = 'Toutes les fiches ont déjà une photo !';
+		return;
+	}
+	$('#admin-panel').close();
+	$('#photo-panel').showModal();
+	showPhotoStep();
+});
+
+function showPhotoStep() {
+	if (photoIdx >= photoQueue.length) {
+		$('#photo-current').innerHTML = '<strong>Terminé !</strong> Les images sont uploadées dans le dépôt. Clique « Publier » (panneau parrain) pour relier les fiches aux photos.';
+		$('#photo-tools').hidden = true;
+		return;
+	}
+	const m = photoQueue[photoIdx];
+	$('#photo-tools').hidden = false;
+	$('#photo-current').innerHTML =
+		`<span class="card-marque">${photoIdx + 1} / ${photoQueue.length}</span>
+		 <h3 style="margin:4px 0 2px">${escapeHtml(m.marque)} ${escapeHtml(m.modele)}</h3>`;
+	const gq = encodeURIComponent(m.marque + ' ' + m.modele + ' 2026 officiel');
+	$('#photo-gimg').href = 'https://www.google.com/search?tbm=isch&q=' + gq;
+	$('#photo-url').value = '';
+	$('#photo-feedback').textContent = '';
+	$('#paste-zone').focus();
+}
+
+$('#photo-skip').addEventListener('click', () => { photoIdx++; showPhotoStep(); });
+$('#photo-quit').addEventListener('click', () => $('#photo-panel').close());
+
+$('#photo-url-save').addEventListener('click', () => {
+	const url = $('#photo-url').value.trim();
+	if (!url) return;
+	const m = photoQueue[photoIdx];
+	m.photo = url;
+	dirty.add(m.id);
+	photoIdx++;
+	showPhotoStep();
+});
+
+$('#paste-zone').addEventListener('paste', async (e) => {
+	e.preventDefault();
+	const item = [...e.clipboardData.items].find(i => i.type.startsWith('image/'));
+	if (!item) { $('#photo-feedback').textContent = 'Pas d\'image dans le presse-papier. Clic droit sur l\'image → « Copier l\'image », puis Ctrl+V ici.'; return; }
+	const m = photoQueue[photoIdx];
+	$('#photo-feedback').textContent = 'Redimensionnement et upload…';
+	try {
+		const jpegB64 = await toJpegB64(item.getAsFile(), 900, 0.82);
+		const path = `data/photos/${m.id}.jpg`;
+		const url = `https://api.github.com/repos/${REPO}/contents/${path}`;
+		// sha si le fichier existe déjà (remplacement)
+		let sha;
+		const head = await fetch(url, { headers: ghHeaders() });
+		if (head.ok) sha = (await head.json()).sha;
+		const put = await fetch(url, {
+			method: 'PUT',
+			headers: ghHeaders(),
+			body: JSON.stringify({ message: 'photo ' + m.id, content: jpegB64, ...(sha ? { sha } : {}) })
+		});
+		if (!put.ok) throw new Error('upload ' + put.status);
+		m.photo = path;
+		dirty.add(m.id);
+		$('#photo-feedback').textContent = 'Photo enregistrée ✔';
+		photoIdx++;
+		setTimeout(showPhotoStep, 350);
+	} catch (err) {
+		$('#photo-feedback').textContent = 'Erreur : ' + err.message;
+	}
+});
+
+function toJpegB64(file, maxW, quality) {
+	return new Promise((resolve, reject) => {
+		const img = new Image();
+		img.onload = () => {
+			const scale = Math.min(1, maxW / img.width);
+			const c = document.createElement('canvas');
+			c.width = Math.round(img.width * scale);
+			c.height = Math.round(img.height * scale);
+			const ctx = c.getContext('2d');
+			ctx.fillStyle = '#fff';
+			ctx.fillRect(0, 0, c.width, c.height);
+			ctx.drawImage(img, 0, 0, c.width, c.height);
+			URL.revokeObjectURL(img.src);
+			resolve(c.toDataURL('image/jpeg', quality).split(',')[1]);
+		};
+		img.onerror = () => reject(new Error('image illisible'));
+		img.src = URL.createObjectURL(file);
+	});
 }
 
 $('#btn-publish').addEventListener('click', async () => {

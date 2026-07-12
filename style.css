@@ -363,3 +363,8 @@ dialog::backdrop { background: rgba(35,38,43,.55); }
 	.site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 56px; }
 	.borne { display: none; }
 }
+
+/* synthèse presse */
+.avis.avis-presse { border-color: var(--bleu); background: rgba(41,65,143,.05); }
+#photo-panel h2 { font-family: var(--font-display); margin-top: 0; }
+#paste-zone:focus { border-color: var(--encre); background: rgba(240,180,41,.07); }
