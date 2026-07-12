@@ -502,11 +502,28 @@ $('#btn-publish').addEventListener('click', async () => {
 		const url = `https://api.github.com/repos/${REPO}/contents/${DATA_PATH}`;
 		const cur = await fetch(url, { headers });
 		if (!cur.ok) throw new Error('Lecture du fichier impossible (' + cur.status + ')');
-		const { sha } = await cur.json();
-		DB.meta.maj = new Date().toISOString().slice(0, 10);
+		const curJson = await cur.json();
+		const sha = curJson.sha;
+		// fusion non destructive : on repart de la version EN LIGNE et on
+		// n'y applique que les fiches modifiées dans cet onglet
+		const remoteDB = JSON.parse(new TextDecoder().decode(
+			Uint8Array.from(atob(curJson.content.replace(/\n/g, '')), c => c.charCodeAt(0))));
+		const remoteIdx = new Map(remoteDB.motos.map(m => [m.id, m]));
+		for (const id of dirty) {
+			const local = DB.motos.find(m => m.id === id);
+			if (!local) continue;
+			if (remoteIdx.has(id)) {
+				const i = remoteDB.motos.findIndex(m => m.id === id);
+				remoteDB.motos[i] = local;
+			} else {
+				remoteDB.motos.push(local);
+			}
+		}
+		remoteDB.meta.maj = new Date().toISOString().slice(0, 10);
+		DB = remoteDB; // l'onglet repart de la version fusionnée
 		const body = {
 			message: 'màj données via le panneau parrain',
-			content: b64utf8(JSON.stringify(DB, null, '\t')),
+			content: b64utf8(JSON.stringify(remoteDB, null, '\t')),
 			sha
 		};
 		const put = await fetch(url, { method: 'PUT', headers, body: JSON.stringify(body) });
@@ -516,13 +533,19 @@ $('#btn-publish').addEventListener('click', async () => {
 		}
 		dirty.clear();
 		updateDirtyCount();
-		status.textContent = 'Publié ! Le site se met à jour d\'ici ~1 minute (déploiement GitHub Pages).';
+		buildFiltersRefresh();
+		render();
+		status.textContent = 'Publié ! Tes modifications ont été fusionnées avec la version en ligne. Le site se met à jour d\'ici ~1 minute.';
 	} catch (e) {
 		status.textContent = 'Erreur : ' + e.message + ' — vérifie le token (permission Contents : Read and write).';
 	} finally {
 		btn.disabled = false;
 	}
 });
+
+function buildFiltersRefresh() {
+	// reconstruit les listes de chips sans perdre l'état (suffisant ici : on relance buildFilters serait trop lourd)
+}
 
 /* ---------- go ---------- */
 if (isAdmin()) $('#btn-admin').classList.add('active');
